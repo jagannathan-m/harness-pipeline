@@ -22,7 +22,12 @@ pipeline:
                   name: Update Release Repo
                   identifier: updateReleaseRepo
                   timeout: 10m
-                  spec: {}
+                  spec:
+                    variables:
+                      - name: sample_version
+                        type: String
+                        value: 0.1.3
+                    prTitle: Sample PR From harness
               - step:
                   type: MergePR
                   name: Merge PR
