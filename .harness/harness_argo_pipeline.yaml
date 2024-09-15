@@ -51,9 +51,9 @@ pipeline:
                     applyOnly: false
                     forceApply: true
                     applicationsList:
-                      - applicationName: dev-applications
-                        agentId: harnesspocargocd
                       - applicationName: hello
+                        agentId: harnesspocargocd
+                      - applicationName: dev-applications
                         agentId: harnesspocargocd
                     retryStrategy: {}
                     retry: false
