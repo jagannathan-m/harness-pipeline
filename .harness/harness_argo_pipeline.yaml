@@ -103,8 +103,10 @@ pipeline:
                     prune: false
                     dryRun: false
                     applyOnly: false
-                    forceApply: false
-                    applicationsList: []
+                    forceApply: true
+                    applicationsList:
+                      - applicationName: hello
+                        agentId: harnesspocargocd
                     retryStrategy: {}
                     retry: false
                     syncOptions:
