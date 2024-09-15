@@ -30,6 +30,17 @@ pipeline:
                       replicas: []
                   timeout: 10m
               - step:
+                  type: GitOpsUpdateReleaseRepo
+                  name: GitOpsUpdateReleaseRepo_1
+                  identifier: GitOpsUpdateReleaseRepo_1
+                  spec:
+                    variables:
+                      - name: sample_version
+                        type: Number
+                        value: <+input>
+                    prTitle: sample harneess PR
+                  timeout: 10m
+              - step:
                   type: MergePR
                   name: Merge PR
                   identifier: mergePR
