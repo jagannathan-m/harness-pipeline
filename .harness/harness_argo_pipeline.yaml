@@ -22,22 +22,17 @@ pipeline:
                   name: UpdateGitOpsApp_1
                   identifier: UpdateGitOpsApp_1
                   spec:
-                    targetRevision: 0.1.2
-                    applicationName: dev-applications
+                    targetRevision: <+input>
+                    applicationName: hello
                     agentId: harnesspocargocd
-                    kustomize:
-                      images: []
-                      replicas: []
+                    helm: <+input>
                   timeout: 10m
               - step:
                   type: GitOpsUpdateReleaseRepo
                   name: GitOpsUpdateReleaseRepo_1
                   identifier: GitOpsUpdateReleaseRepo_1
                   spec:
-                    variables:
-                      - name: sample_version
-                        type: Number
-                        value: <+input>
+                    variables: []
                     prTitle: sample harneess PR
                   timeout: 10m
               - step:
