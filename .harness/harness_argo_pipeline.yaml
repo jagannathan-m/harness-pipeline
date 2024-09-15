@@ -53,8 +53,6 @@ pipeline:
                     applicationsList:
                       - applicationName: dev-applications
                         agentId: harnesspocargocd
-                      - applicationName: hello
-                        agentId: harnesspocargocd
                     retryStrategy: {}
                     retry: false
                     syncOptions:
