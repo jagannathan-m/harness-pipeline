@@ -1,2 +1,2 @@
 # harness-pipeline
-repo for harness-pipeline demo
+repo for harness-pipeline demos
