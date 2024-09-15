@@ -43,11 +43,34 @@ pipeline:
                   spec: {}
               - step:
                   type: GitOpsSync
+                  name: Sync Dev Env
+                  identifier: Sync_Dev_Env
+                  spec:
+                    prune: false
+                    dryRun: false
+                    applyOnly: false
+                    forceApply: true
+                    retryStrategy: {}
+                    retry: false
+                    syncOptions:
+                      skipSchemaValidation: false
+                      autoCreateNamespace: false
+                      pruneResourcesAtLast: false
+                      applyOutOfSyncOnly: false
+                      replaceResources: false
+                      prunePropagationPolicy: foreground
+                    applicationsList:
+                      - applicationName: dev-applications
+                        agentId: harnesspocargocd
+                    waitTillHealthy: true
+                  timeout: 10m
+              - step:
+                  type: GitOpsSync
                   name: Sync Hello App
                   identifier: Sync_Hello_App
                   spec:
                     prune: false
-                    dryRun: true
+                    dryRun: false
                     applyOnly: false
                     forceApply: true
                     applicationsList:
