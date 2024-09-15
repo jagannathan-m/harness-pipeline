@@ -38,8 +38,11 @@ pipeline:
                   spec: {}
             rollbackSteps: []
           environment:
-            environmentRef: Development
-            deployToAll: true
+            environmentRef: poc_dev_env
+            deployToAll: false
+            gitOpsClusters:
+              - identifier: local_minikube
+                agentIdentifier: harnesspocargocd
         tags: {}
         failureStrategies:
           - onFailure:
