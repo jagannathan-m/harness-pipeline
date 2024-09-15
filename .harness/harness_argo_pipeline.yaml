@@ -53,27 +53,6 @@ pipeline:
                     applicationsList:
                       - applicationName: dev-applications
                         agentId: harnesspocargocd
-                    retryStrategy: {}
-                    retry: false
-                    syncOptions:
-                      skipSchemaValidation: false
-                      autoCreateNamespace: false
-                      pruneResourcesAtLast: false
-                      applyOutOfSyncOnly: false
-                      replaceResources: false
-                      prunePropagationPolicy: foreground
-                    waitTillHealthy: true
-                  timeout: 10m
-              - step:
-                  type: GitOpsSync
-                  name: Sync Hello App
-                  identifier: GitOpsSync_2
-                  spec:
-                    prune: false
-                    dryRun: false
-                    applyOnly: false
-                    forceApply: true
-                    applicationsList:
                       - applicationName: hello
                         agentId: harnesspocargocd
                     retryStrategy: {}
@@ -82,24 +61,10 @@ pipeline:
                       skipSchemaValidation: false
                       autoCreateNamespace: false
                       pruneResourcesAtLast: false
-                      applyOutOfSyncOnly: false
+                      applyOutOfSyncOnly: true
                       replaceResources: false
                       prunePropagationPolicy: foreground
                     waitTillHealthy: true
-                  timeout: 10m
-              - step:
-                  type: ShellScript
-                  name: ShellScript_1
-                  identifier: ShellScript_1
-                  spec:
-                    shell: Bash
-                    executionTarget: {}
-                    source:
-                      type: Inline
-                      spec:
-                        script: echo "Pipeline End!"
-                    environmentVariables: []
-                    outputVariables: []
                   timeout: 10m
             rollbackSteps: []
           environment:
