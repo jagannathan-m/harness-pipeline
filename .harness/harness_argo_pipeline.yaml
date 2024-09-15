@@ -59,7 +59,7 @@ pipeline:
                       skipSchemaValidation: false
                       autoCreateNamespace: false
                       pruneResourcesAtLast: false
-                      applyOutOfSyncOnly: true
+                      applyOutOfSyncOnly: false
                       replaceResources: false
                       prunePropagationPolicy: foreground
                     waitTillHealthy: true
