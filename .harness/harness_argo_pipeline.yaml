@@ -38,7 +38,7 @@ pipeline:
                   spec: {}
             rollbackSteps: []
           environment:
-            environmentRef: poc_dev_env
+            environmentRef: Development
             deployToAll: false
             gitOpsClusters:
               - identifier: local_minikube
