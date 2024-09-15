@@ -53,6 +53,28 @@ pipeline:
                   identifier: fetchLinkedApps
                   timeout: 10m
                   spec: {}
+              - step:
+                  type: GitOpsSync
+                  name: GitOpsSync_1
+                  identifier: GitOpsSync_1
+                  spec:
+                    prune: false
+                    dryRun: false
+                    applyOnly: false
+                    forceApply: true
+                    applicationsList:
+                      - applicationName: dev-applications
+                        agentId: harnesspocargocd
+                    retryStrategy: {}
+                    retry: false
+                    syncOptions:
+                      skipSchemaValidation: false
+                      autoCreateNamespace: false
+                      pruneResourcesAtLast: false
+                      applyOutOfSyncOnly: false
+                      replaceResources: false
+                      prunePropagationPolicy: foreground
+                  timeout: 10m
             rollbackSteps: []
           environment:
             environmentRef: Development
