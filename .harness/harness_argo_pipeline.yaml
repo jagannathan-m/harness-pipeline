@@ -32,7 +32,10 @@ pipeline:
                   name: GitOpsUpdateReleaseRepo_1
                   identifier: GitOpsUpdateReleaseRepo_1
                   spec:
-                    variables: []
+                    variables:
+                      - name: sample_version
+                        type: String
+                        value: <+input>
                     prTitle: sample harneess PR
                   timeout: 10m
               - step:
