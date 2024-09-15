@@ -67,6 +67,6 @@ pipeline:
     ci:
       codebase:
         connectorRef: githubconnector
-        repoName: harness-argo-poc
+        repoName: harness-argo-service
         build: <+input>
         sparseCheckout: []
