@@ -23,14 +23,11 @@ pipeline:
                   identifier: UpdateGitOpsApp_1
                   spec:
                     targetRevision: 0.1.2
-                    helm:
-                      valueFiles:
-                        - values.yaml
-                      parameters:
-                        - name: count
-                          value: "1"
-                    applicationName: hello
+                    applicationName: dev-applications
                     agentId: harnesspocargocd
+                    kustomize:
+                      images: []
+                      replicas: []
                   timeout: 10m
               - step:
                   type: MergePR
@@ -67,6 +64,6 @@ pipeline:
     ci:
       codebase:
         connectorRef: githubconnector
-        repoName: harness-argo-service
+        repoName: harness-argo-poc
         build: <+input>
         sparseCheckout: []
