@@ -25,17 +25,16 @@ pipeline:
                     targetRevision: main
                     applicationName: dev-applications
                     agentId: harnesspocargocd
-                    kustomize: {}
+                    kustomize:
+                      images: []
+                      replicas: []
                   timeout: 10m
               - step:
                   type: GitOpsUpdateReleaseRepo
                   name: GitOpsUpdateReleaseRepo_1
                   identifier: GitOpsUpdateReleaseRepo_1
                   spec:
-                    variables:
-                      - name: sample_version
-                        type: String
-                        value: <+input>
+                    variables: []
                     prTitle: sample harneess PR
                   timeout: 10m
               - step:
