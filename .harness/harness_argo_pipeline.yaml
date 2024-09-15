@@ -58,7 +58,7 @@ pipeline:
                       pruneResourcesAtLast: false
                       applyOutOfSyncOnly: false
                       replaceResources: false
-                      prunePropagationPolicy: foreground
+                      prunePropagationPolicy: background
                     applicationsList:
                       - applicationName: dev-applications
                         agentId: harnesspocargocd
