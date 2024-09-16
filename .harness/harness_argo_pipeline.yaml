@@ -32,9 +32,9 @@ pipeline:
                     shell: Sh
                     command: |-
                       ls -l
-                      export chart_version=0.1.1
+                      export CHART_VERSION=$(cat helm-chart-version.yaml)
                     outputVariables:
-                      - name: chart_version
+                      - name: CHART_VERSION
     - stage:
         name: Prepare Gitops Repo for Dev
         identifier: Deploy_to_Dev
