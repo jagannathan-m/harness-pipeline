@@ -141,6 +141,7 @@ pipeline:
                       applyOutOfSyncOnly: false
                       replaceResources: false
                       prunePropagationPolicy: foreground
+                    waitTillHealthy: true
                   timeout: 10m
             rollbackSteps: []
           environment:
