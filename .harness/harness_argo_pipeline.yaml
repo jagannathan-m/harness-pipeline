@@ -30,7 +30,11 @@ pipeline:
                     connectorRef: account.harnessImage
                     image: python:3-slim
                     shell: Sh
-                    command: ls -l
+                    command: |-
+                      ls -l
+                      export chart_version=0.1.1
+                    outputVariables:
+                      - name: chart_version
     - stage:
         name: Prepare Gitops Repo for Dev
         identifier: Deploy_to_Dev
