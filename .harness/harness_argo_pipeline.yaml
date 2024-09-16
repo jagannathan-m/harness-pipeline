@@ -55,7 +55,7 @@ pipeline:
                     variables:
                       - name: spec.source.targetRevision
                         type: String
-                        value: <+input>
+                        value: <+pipeline.stages.Get_helm_chart_version.spec.execution.steps.Run_1.output.outputVariables.CHART_VERSION>
                     prTitle: sample harneess PR
                   timeout: 10m
               - step:
