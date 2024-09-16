@@ -6,6 +6,32 @@ pipeline:
   tags: {}
   stages:
     - stage:
+        name: Get helm chart version
+        identifier: Get_helm_chart_version
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          infrastructure:
+            type: KubernetesDirect
+            spec:
+              connectorRef: local_k8s_cluster
+              namespace: harness-delegate-ng
+              automountServiceAccountToken: true
+              nodeSelector: {}
+              os: Linux
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Run_1
+                  identifier: Run_1
+                  spec:
+                    connectorRef: account.harnessImage
+                    image: python:3-slim
+                    shell: Sh
+                    command: ls -l
+    - stage:
         name: Prepare Gitops Repo for Dev
         identifier: Deploy_to_Dev
         description: ""
