@@ -1,0 +1,14 @@
+inputSet:
+  name: hello input set
+  identifier: hello_input_set
+  orgIdentifier: IDP
+  projectIdentifier: Hello_World
+  pipeline:
+    identifier: harness_argo_pipeline
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
