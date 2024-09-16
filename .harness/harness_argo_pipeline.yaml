@@ -16,7 +16,7 @@ pipeline:
             type: KubernetesDirect
             spec:
               connectorRef: local_k8s_cluster
-              namespace: harness-delegate-ng
+              namespace: harness-poc-dev
               automountServiceAccountToken: true
               nodeSelector: {}
               os: Linux
